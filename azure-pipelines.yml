@@ -30,7 +30,7 @@ stages:
   displayName: Build stage
   jobs:
   - job: BuildJob
-    pool: MyComputerAgent
+    pool: Azure Pipelines
       
     steps:
     - task: UsePythonVersion@0
