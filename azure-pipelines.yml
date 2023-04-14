@@ -39,7 +39,7 @@ stages:
       inputs:
         versionSpec: '$(pythonVersion)'
       displayName: 'Use Python $(pythonVersion)'
-      githubToken: '$(githubToken)'
+      githubToken: $(githubToken)
     - script: |
         python -m venv antenv
         source antenv/bin/activate
