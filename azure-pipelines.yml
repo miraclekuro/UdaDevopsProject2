@@ -22,11 +22,11 @@ variables:
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
-  # Python version: 3.10
+  # Python version: 3.9
   pythonVersion: '3.9'
   
   # Github Token 
-  githubToken : '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'
+  githubToken: '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'
 stages:
 - stage: Build
   displayName: Build stage
@@ -39,7 +39,7 @@ stages:
       inputs:
         versionSpec: '$(pythonVersion)'
       displayName: 'Use Python $(pythonVersion)'
-      githubToken: '$(githubToken)
+      githubToken: '$(githubToken)'
     - script: |
         python -m venv antenv
         source antenv/bin/activate
