@@ -3,10 +3,8 @@ from flask.logging import create_logger
 import logging
 
 import pandas as pd
-
 import joblib
 from sklearn.preprocessing import StandardScaler
-
 
 app = Flask(__name__)
 LOG = create_logger(app)
@@ -22,7 +20,7 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home test</h3>"
+    html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
@@ -33,8 +31,7 @@ def predict():
         # Load pretrained model as clf. Try any one model. 
         # clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
         # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
-        # clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
-        clf = joblib.load("boston_housing_prediction.joblib")
+        clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
     except:
         LOG.info("JSON payload: %s json_payload")
         return "Model not loaded"
@@ -48,7 +45,4 @@ def predict():
     return jsonify({'prediction': prediction})
 
 if __name__ == "__main__":
-    #  app.run(host='0.0.0.0', port=80, debug=True)
-    # trigger
-     joblib.load("./boston_housing_prediction.joblib")
-
+    app.run(host='0.0.0.0', port=5000, debug=True)
