@@ -2,6 +2,8 @@
 
 In this project, we build a Github Repository from scratch with CI/CD in Azure devops.
 
+[![Python application test with Github Actions](https://github.com/miraclekuro/UdaDevopsProject2/actions/workflows/main.yml/badge.svg)](https://github.com/miraclekuro/UdaDevopsProject2/actions/workflows/main.yml)
+
 ## Project Plan
 <TODO: Project Plan
 
